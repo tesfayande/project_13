@@ -1,0 +1,128 @@
+
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="dashboard-header">
+        <div class="header-left">
+          <h2> Your Car Your Way Agent Dashboard</h2>
+          <span class="user-info">Welcome, {{ currentUser?.name }}!</span>
+        </div>
+        <button (click)="leaveChat()" class="btn btn-leave">
+          🏠 Leave Chat
+        </button>
+      </header>
+
+      <div class="dashboard-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3>Available Conversations</h3>
+            <div class="conversations-list">
+              @for (conversation of availableConversations; track conversation.id) {
+                <div class="conversation-item new-conversation" (click)="joinConversation(conversation)">
+                  <div class="conversation-avatar">
+                    {{ getCustomerInitial(conversation) }}
+                  </div>
+                  <div class="conversation-info">
+                    <strong>New chat from {{ getCustomerName(conversation) }}</strong>
+                    <span>Waiting for agent...</span>
+                  </div>
+                  <button class="btn btn-join">Join</button>
+                </div>
+              }
+              @if (availableConversations.length === 0) {
+                <div class="no-conversations">No new conversations</div>
+              }
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>My Active Conversations</h3>
+            <div class="conversations-list">
+              @for (conversation of myConversations; track conversation.id) {
+                <div class="conversation-item" 
+                     [class.active]="selectedConversation?.id === conversation.id"
+                     (click)="selectConversation(conversation)">
+                  <div class="conversation-avatar">
+                    {{ getCustomerInitial(conversation) }}
+                  </div>
+                  <div class="conversation-info">
+                    <strong>Chat with {{ getCustomerName(conversation) }}</strong>
+                    <span>Active</span>
+                  </div>
+                </div>
+              }
+              @if (myConversations.length === 0) {
+                <div class="no-conversations">No active conversations</div>
+              }
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+          @if (selectedConversation) {
+            <div class="chat-header">
+              <div class="chat-partner-info">
+                <div class="partner-avatar">
+                  {{ getCustomerInitial(selectedConversation) }}
+                </div>
+                <div class="partner-details">
+                  <h3>Chat with {{ getCustomerName(selectedConversation) }}</h3>
+                  <div class="customer-info">
+                    Customer since {{ selectedConversation.createdAt | date:'mediumDate' }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-messages" #messageContainer>
+              @for (message of messages; track message.id) {
+                <div [class.my-message]="message.sender.id === currentUser?.id" 
+                     [class.customer-message]="message.sender.id !== currentUser?.id"
+                     class="message">
+                  <div class="message-sender">{{ message.sender.name }}</div>
+                  <div class="message-content">{{ message.content }}</div>
+                  <div class="message-time">{{ message.createdAt | date:'shortTime' }}</div>
+                </div>
+              }
+              @if (messages.length === 0) {
+                <div class="empty-chat">
+                  <div class="empty-icon">💬</div>
+                  <h4>No messages yet</h4>
+                  <p>Start the conversation by sending a message</p>
+                </div>
+              }
+            </div>
+
+            <div class="message-input-container">
+              <input [(ngModel)]="newMessage" 
+                     placeholder="Type your response..." 
+                     (keyup.enter)="sendMessage()">
+              <button (click)="sendMessage()" 
+                      [disabled]="!newMessage.trim()"
+                      class="btn btn-send">
+                Send
+              </button>
+            </div>
+          } @else {
+            <div class="no-conversation">
+              <div class="welcome-message">
+                <div class="welcome-icon">👨‍💼</div>
+                <h3>Welcome to Agent Dashboard!</h3>
+                <p>Join available conversations from the sidebar or select an active conversation to continue chatting.</p>
+                <div class="stats">
+                  <div class="stat-item">
+                    <strong>{{ availableConversations.length }}</strong>
+                    <span>New Conversations</span>
+                  </div>
+                  <div class="stat-item">
+                    <strong>{{ myConversations.length }}</strong>
+                    <span>Active Conversations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </main>
+      </div>
+    </div>

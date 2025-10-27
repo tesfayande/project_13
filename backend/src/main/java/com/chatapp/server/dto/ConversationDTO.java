@@ -1,0 +1,1 @@
+package com.chatapp.server.dto;// ConversationDTO.javaimport lombok.Data;import java.time.LocalDateTime;@Datapublic class ConversationDTO {    private Long id;    private UserDTO agent;    private UserDTO customer;    private LocalDateTime createdAt;}

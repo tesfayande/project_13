@@ -1,0 +1,1 @@
+package com.chatapp.server.payload.request;// SendMessageRequest.javaimport lombok.Data;@Datapublic class SendMessageRequest {    private Long conversationId;    private Long senderId;    private Long receiverId; // This can be null for initial messages    private String content;}

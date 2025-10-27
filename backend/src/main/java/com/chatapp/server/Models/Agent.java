@@ -1,0 +1,1 @@
+package com.chatapp.server.Models;import jakarta.persistence.*;        import lombok.Data;@Entity@Table(name = "agents")@Datapublic class Agent {    @Id    @GeneratedValue(strategy = GenerationType.IDENTITY)    private Long id;    @OneToOne    @JoinColumn(name = "user_id", unique = true)    private User user;}

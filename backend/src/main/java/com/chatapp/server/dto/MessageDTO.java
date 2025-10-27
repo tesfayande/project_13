@@ -1,0 +1,1 @@
+package com.chatapp.server.dto;// MessageDTO.javaimport lombok.Data;import java.time.LocalDateTime;@Datapublic class MessageDTO {    private Long id;    private Long conversationId;    private UserDTO sender;    private UserDTO receiver;    private String content;    private LocalDateTime createdAt;}

@@ -1,0 +1,1 @@
+package com.chatapp.server.payload.request;import com.chatapp.server.Models.User;import lombok.Data;@Datapublic class RegisterUserRequest {    private String firstName;    private String lastName;    private String email;    private String password;    private String name;    private String birthdate;    private User.UserType type;}

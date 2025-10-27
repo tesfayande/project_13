@@ -1,0 +1,1 @@
+package com.chatapp.server.payload.request;// JoinConversationRequest.javaimport lombok.Data;@Datapublic class JoinConversationRequest {    private Long agentId;    private Long conversationId;}
