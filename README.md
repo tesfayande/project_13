@@ -1,10 +1,10 @@
 # Project 13
 
-## Développez une application full-stack complète
+## Définissez une solution fonctionnelle et concevez l’architecture d’une application
 
 ## 📝 Project Overview
 
-This repository contains the project13 of  OpenClassrooms [Angular and Java development](https://openclassrooms.com/fr/paths/533-developpeur-full-stack-java-et-angular) development path. It was built as a fullstack web application with:
+This repository contains the project13 of  OpenClassrooms [Angular and Java development](https://openclassrooms.com/fr/paths/533-developpeur-full-stack-java-et-angular) development path. It was built as a fullstack Chat web application with:
 
 - **Backend**: Spring Boot (Java) for REST API
 - **Frontend**: Angular (TypeScript) for user interface
@@ -18,12 +18,13 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 - Hibernate
 - Maven
 - Mysql
+-WebSocket
 
 ### Frontend (Angular)
 
 - Angular
 - RxJS
-
+-WebSocket
 
 ## 🚀 Installation & Setup
 
