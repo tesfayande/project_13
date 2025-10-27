@@ -34,7 +34,7 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 
 ### Backend Setup
 
-        cd back
+        cd backend
 
 1. **Configure database**
    - Create a database in your DBMS
