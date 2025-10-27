@@ -18,15 +18,13 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 - Hibernate
 - Maven
 - Mysql
-
--WebSocket
+- WebSocket
 
 ### Frontend (Angular)
 
 - Angular
 - RxJS
-
--WebSocket
+- WebSocket
 
 ## 🚀 Installation & Setup
 
