@@ -16,3 +16,21 @@ export interface SendMessageRequest {
   receiverId: number;
   content: string;
 }
+
+export interface ChatMessage {
+  content: string;
+  sender: string;
+  receiver: string;
+  type: MessageType;
+  timestamp: Date;
+  chatRoomId: string;
+}
+
+export enum MessageType {
+  CHAT = 'CHAT',
+  JOIN = 'JOIN',
+  LEAVE = 'LEAVE',
+  CUSTOMER_TO_AGENT = 'CUSTOMER_TO_AGENT',
+  AGENT_TO_CUSTOMER = 'AGENT_TO_CUSTOMER'
+}
+

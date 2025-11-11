@@ -1,0 +1,40 @@
+
+    <div class="home-container">
+      <header class="home-header">
+        <h1>💬 Your Car Your Way  Chat</h1>
+        <p>Connect with users and start conversations</p>
+      </header>
+
+      <div class="users-section">
+        <h2>All Users</h2>
+        
+        @if (isLoading) {
+          <div class="loading">Loading users...</div>
+        }
+
+        @if (error) {
+          <div class="error">{{ error }}</div>
+        }
+
+        <div class="users-grid">
+          @for (user of users; track user.id) {
+            <div class="user-card" (click)="selectUser(user)">
+              <div class="user-avatar">
+                {{ user.name.charAt(0) }}
+              </div>
+              <div class="user-info">
+                <h3>{{ user.name }}</h3>
+                <p class="user-email">{{ user.email }}</p>
+                <span class="user-badge" [class.customer]="user.type === 'CUSTOMER'" 
+                      [class.agent]="user.type === 'AGENT'">
+                  {{ user.type }}
+                </span>
+              </div>
+              <div class="user-action">
+                <button class="btn btn-chat">Start Chat →</button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>

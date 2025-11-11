@@ -155,6 +155,7 @@ startConversationWithAgent(agent: Agent): void {
 
   selectConversation(conversation: Conversation): void {
     this.selectedConversation = conversation;
+    localStorage.setItem('selectedAgent', JSON.stringify(conversation.agent));
     this.loadConversationMessages(conversation.id);
     this.websocketService.subscribeToConversation(conversation.id);
   }

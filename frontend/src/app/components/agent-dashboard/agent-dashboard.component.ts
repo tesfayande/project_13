@@ -32,7 +32,7 @@ export class AgentDashboardComponent implements OnInit, OnDestroy {
   private messageSubscription: Subscription | null = null;
 
   ngOnInit(): void {
-    const userStr = localStorage.getItem('currentUser');
+    const userStr = localStorage.getItem('selectedAgent');
     if (userStr) {
       this.currentUser = JSON.parse(userStr);
       this.loadData();

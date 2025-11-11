@@ -1,0 +1,60 @@
+<div class="chat-container">
+  
+
+  <div class="main-content">
+    <!-- Left Section - Customer Selection -->
+    <div class="selection-section customer-section">
+      <div class="section-header">
+        <h3>Customers</h3>
+        <button>
+          Refresh
+        </button>
+          </div>
+          <div class="user-list">
+            <div class="loading">Loading customers...</div>
+            <div  class="no-users">
+              No customers found
+            </div>
+            <div class="user-item">
+              <div class="avatar">customer name Count</div>
+              <div class="user-info">
+                <div class="name">customer name</div>
+                <div class="type">Customer</div>
+                <div class="status" >Online:Offline</div>
+              </div>
+            </div>
+          </div>
+
+          <app-customer-dashboard></app-customer-dashboard>
+        </div>
+
+        
+
+        <!-- Right Section - Agent Selection -->
+    <div class="selection-section agent-section">
+          
+      <div class="section-header">
+        <h3>Agents</h3>
+        <button class="refresh-btn">Refresh</button>
+      </div>
+      <div class="user-list">
+         <div class="no-users">No agents available</div>
+        <div class="user-item">
+          <div class="avatar agent-avatar">Agent Chats</div>
+          <div class="user-info">
+            <div class="name">Agent Names</div>
+                <div class="type">Agent</div>
+                <div class="status" >Online:Offline</div>
+              </div>
+            </div>
+       </div>
+       <app-agent-dashboard></app-agent-dashboard>
+
+
+          
+
+  </div>
+</div>
+
+      
+   
