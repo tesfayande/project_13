@@ -9,6 +9,7 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 - **Backend**: Spring Boot (Java) for REST API
 - **Frontend**: Angular (TypeScript) for user interface
 
+
 ## 🛠️ Technologies Used
 
 ### Backend (Spring Boot)
@@ -39,6 +40,8 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 1. **Configure database**
    - Create a database in your DBMS
    - Update application.properties with your DB credentials
+   -Database sql is found in db/data.sql
+   -database diagram  ![My Db Diagram](./resources/Pr13_DB_Diagramm.png)
 
 2. **Build and run**
 

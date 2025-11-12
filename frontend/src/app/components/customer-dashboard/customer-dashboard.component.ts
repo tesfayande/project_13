@@ -47,20 +47,7 @@ export class CustomerDashboardComponent implements OnInit, OnDestroy {
     
   }
 
-  /*
   loadData(): void {
-    if (!this.currentUser) return;
-
-    this.apiService.getAllAgents().subscribe(agents => {
-      this.agents = agents;
-    });
-
-    this.apiService.getCustomerConversations(this.currentUser.id).subscribe(conversations => {
-      this.conversations = conversations;
-    });
-  }*/
- // src/app/components/customer-dashboard/customer-dashboard.component.ts - Update loadData method
-loadData(): void {
   if (!this.currentUser) return;
 
   this.apiService.getAllAgents().subscribe({
@@ -109,25 +96,7 @@ loadData(): void {
     this.showNewConversation = !this.showNewConversation;
   }
 
-  /*
-  startConversationWithAgent(agent: Agent): void {
-    if (!this.currentUser) return;
 
-    this.apiService.createConversationWithAgent(this.currentUser.id, agent.id).subscribe({
-      next: (conversation) => {
-        this.conversations.push(conversation);
-        this.selectedConversation = conversation;
-        this.showNewConversation = false; // Hide the agents list after selection
-        this.loadConversationMessages(conversation.id);
-        this.websocketService.subscribeToConversation(conversation.id);
-      },
-      error: (error) => {
-        console.error('Error creating conversation:', error);
-        alert('Error creating conversation: ' + error.error?.error || error.message);
-      }
-    });
-  }*/
- // In CustomerDashboardComponent - Add validation before creating conversation
 startConversationWithAgent(agent: Agent): void {
   if (!this.currentUser) return;
 
