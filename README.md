@@ -40,8 +40,8 @@ This repository contains the project13 of  OpenClassrooms [Angular and Java deve
 1. **Configure database**
    - Create a database in your DBMS
    - Update application.properties with your DB credentials
-   -Database sql is found in db/data.sql
-   -database diagram  ![My Db Diagram](./resources/Pr13_DB_Diagramm.png)
+   - Database sql is found in db/data.sql
+   - Database diagram  ![My Db Diagram](https://github.com/tesfayande/project_13/blob/main/Resources/Pr13_DB_Diagramm.png)
 
 2. **Build and run**
 
